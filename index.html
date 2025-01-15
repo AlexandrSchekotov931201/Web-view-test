@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Page</title>
-    <script>
-        function sendMessage() {
-            alert("Hello from JavaScript!");
-        }
-    </script>
 </head>
 <body>
-    <h1>WebView Test</h1>
-    <button onclick="sendMessage()">Click Me</button>
+    <button onclick="sendDataToAndroid()">Send Data to Android</button>
+    <script>
+        function sendDataToAndroid() {
+            // Создание JSON-объекта
+            const jsonData = JSON.stringify({
+                action: "go_back",
+                data: null // Поле data оставлено пустым (null)
+            });
+
+            // Вызов метода postMessage у Android
+            Android.postMessage(jsonData);
+        }
+    </script>
 </body>
 </html>
