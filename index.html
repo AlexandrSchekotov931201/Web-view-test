@@ -12,13 +12,13 @@
             // Создание JSON-объекта
             const jsonData = JSON.stringify({
                 action: "setup_navigation_bar",
-                data: `{
-                    \"title\": \"Page Title\",
-                    \"left_button_title\": \"back\",
-                    \"left_button_action\": \"\",
-                    \"left_button_type\": \"\",
-                    \"behavior\": \"legacy\"
-                }`
+                data: {
+                    "title": "Page Title",
+                    "left_button_title": "Back",
+                    "left_button_action": "",
+                    "left_button_type": "back",
+                    "behavior": "legacy"
+                }
             });
 
             // Вызов метода postMessage у Android
